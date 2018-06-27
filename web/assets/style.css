@@ -27,6 +27,42 @@
     color : black;
 }
 
+/*********CHARACTER-CHOISE*********/
+.perso{
+
+    background-color: #222222;
+    color: white;
+
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vicelardName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    height: 700PX;
+    width: 300px;
+    padding-bottom: 150px;
+}
+
+.vicelardOne{
+    margin-top: 0px;
+}
+
+.carousel-item .vicelardBtn {
+    margin-left: 48vw;
+}
+
+/**********MAP***********/
+
 .tile {
     background-repeat: no-repeat;
     background-size: cover;
