@@ -58,6 +58,4 @@ class PersonnageType extends AbstractType
     {
         return 'appbundle_personnage';
     }
-
-
 }
