@@ -21,6 +21,8 @@ class AttractionType extends AbstractType
             ->add('size')
             ->add('age')
             ->add('nationality', EntityType::class, array(
+                'placeholder' => ' ',
+                'required' => false,
                 'class' => 'AppBundle\Entity\Nationality',
                 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('u')
@@ -29,6 +31,8 @@ class AttractionType extends AbstractType
                 'choice_label' => 'name'
             ))
             ->add('vice', EntityType::class, array(
+                'placeholder' => ' ',
+                'required' => false,
                 'class' => 'AppBundle\Entity\Vice',
                 'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('u')
