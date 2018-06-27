@@ -20,6 +20,7 @@ class PersonnageType extends AbstractType
             ->add('description')
             ->add('size')
             ->add('age')
+            ->add('photo')
             ->add('nationality', EntityType::class, array(
                 'placeholder' => ' ',
                 'required' => false,

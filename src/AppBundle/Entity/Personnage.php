@@ -52,6 +52,13 @@ class Personnage
     /**
      * @var string
      *
+     * @ORM\Column(name="photo_url", type="string", length=255)
+     */
+    private $photo;
+
+    /**
+     * @var string
+     *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Nationality")
      * @ORM\JoinColumn(nullable=true)
      */
@@ -218,6 +225,22 @@ class Personnage
     public function getVice()
     {
         return $this->vice;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param string $photo
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
     }
 }
 
