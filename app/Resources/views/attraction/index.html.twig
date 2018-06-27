@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Attractions list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Size</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for attraction in attractions %}
+            <tr>
+                <td><a href="{{ path('attraction_show', { 'id': attraction.id }) }}">{{ attraction.id }}</a></td>
+                <td>{{ attraction.name }}</td>
+                <td>{{ attraction.description }}</td>
+                <td>{{ attraction.size }}</td>
+                <td>{{ attraction.age }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('attraction_show', { 'id': attraction.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('attraction_edit', { 'id': attraction.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('attraction_new') }}">Create a new attraction</a>
+        </li>
+    </ul>
+{% endblock %}
