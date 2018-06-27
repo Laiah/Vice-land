@@ -1,0 +1,28 @@
+@font-face {
+    font-family: South Park;
+    src: url('south park.ttf');
+}
+
+/* -------- HOMEPAGE -------- */
+#home {
+    background-image: url("images/SP_background.png");
+    height : 100vh;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    font-family: South Park, sans-serif;
+    color: brown;
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 7rem;
+}
+
+#home h2 {
+    padding-top: 30vh;
+}
+
+#home a {
+    color : black;
+}
