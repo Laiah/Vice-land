@@ -1,4 +1,12 @@
-.checkout
-=========
+Hackathon "Parc d'attraction"
+==
 
-A Symfony project created on June 27, 2018, 3:20 pm.
+Créé par : 
+ 
+ - Anthony Doux
+ - Kévin Mormin
+ - Kévin Loiseau
+ - Gauthier Toreilles
+ - Maxime Ordonez
+ - Léa Crémier
+ 
