@@ -53,7 +53,7 @@ class Attraction
      * @var Vice
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Vice", inversedBy="attractions")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $vice;
 
@@ -61,9 +61,16 @@ class Attraction
      * @var Nationality
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Nationality", inversedBy="attractions")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $nationality;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo_url", type="string", nullable=true, length=255)
+     */
+    private $photo;
 
 
     /**
@@ -218,6 +225,22 @@ class Attraction
     public function getVice()
     {
         return $this->vice;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param string $photo
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
     }
 }
 
