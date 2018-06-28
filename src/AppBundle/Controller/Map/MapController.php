@@ -23,8 +23,11 @@ class MapController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $attractions = $em->getRepository(Attraction::class)->findAll();
+        foreach ($attractions as $attraction) {
+            $map[$attraction->getCoordY()][$attraction->getCoordX()] = $attraction;
+        }
         return $this->render('map/index.html.twig', array(
-            'attractions' => $attractions,
+            'map' => $map,
         ));
     }
 }

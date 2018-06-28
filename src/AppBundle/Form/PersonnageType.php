@@ -3,6 +3,10 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\RadioType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -15,32 +19,17 @@ class PersonnageType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('name')
-            ->add('description')
-            ->add('size')
-            ->add('age')
-            ->add('photo')
-            ->add('nationality', EntityType::class, array(
-                'placeholder' => ' ',
-                'required' => false,
-                'class' => 'AppBundle\Entity\Nationality',
-                'query_builder' => function (EntityRepository $er) {
-                    return $er->createQueryBuilder('u')
-                        ->orderBy('u.name', 'DESC');
-                },
-                'choice_label' => 'name'
-            ))
-            ->add('vice', EntityType::class, array(
-                'placeholder' => ' ',
-                'required' => false,
-                'class' => 'AppBundle\Entity\Vice',
-                'query_builder' => function (EntityRepository $er) {
-                    return $er->createQueryBuilder('u')
-                        ->orderBy('u.name', 'DESC');
-                },
-                'choice_label' => 'name'
-            ));
+
+        $builder->add('gay', ChoiceType::class, array(
+            'choices' => array(
+                'Yes' => true,
+                'No' => false
+            ),
+            'label' => 'Are you Gay ?',
+            'required' => true,
+            'data' => false,
+            'choices_as_values' => true
+        ));
     }/**
      * {@inheritdoc}
      */

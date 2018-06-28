@@ -83,5 +83,10 @@ class Nationality
     {
         $this->attractions = $attractions;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }
 

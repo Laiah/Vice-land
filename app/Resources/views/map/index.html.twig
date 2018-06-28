@@ -2,31 +2,54 @@
 
 {% block body %}
     <div id="map">
-        <div class="container-fluid">
-            <div class="row row-height">
-                <div class="col-6 offset-3">
-                    <h2 class="map-title pt-4">Welcome To Viceland</h2>
-                </div>
-            </div>
-        {% for j in 'b'..'g'%}
-            <div class="row row-height">
-                {% for i in 0..11 %}
-                            <div class="col-1 rounded-circle {{ j }}{{ i }}"
-                                    {% for attraction in attractions %}
-                                    {% if attraction.coordY == j and attraction.coordX == i %}
-                                 style="background-image: url('{{ attraction.photo }}');
-                                         background-position: center;
-                                         background-size: cover;"
-                                        id="tile"
-                                    {% endif %}
-                                    {% endfor %}>
-                            </div>
-
-                {% endfor %}
-            </div>
-        {% endfor %}
+    <div class="container-fluid ">
+    <div class="row row-height">
+        <div class="col-6 offset-3">
+            <h2 class="map-title pt-4">Welcome To Viceland</h2>
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-12">
+            <div class="map">
+                {% for y in 'b'..'g'%}
+                    <div class="row row-height">
+                        {% for x in 0..11 %}
+                            {% if map[y][x] is defined %}
+                                <div class="col-1 rounded-circle map{{ y }}{{ x }}"
+                                     style="background-image: url('{{ map[y][x].photo }}');
+                                        background-position: center;
+                                        background-size: cover;"
+                                     id="tile"
+                                     data-toggle="modal"
+                                     data-target="#map{{ y }}{{ x }}">
+                                </div>
+                                <div class="modal fade" id="map{{ y }}{{ x }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">{{ map[y][x].name }}</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <img class="gif-modal" src="{{ map[y][x].photo }}" alt="{{ map[y][x].name }}">
+                                                {{ map[y][x].description }}
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% else %}
+                                    <div class="col-1 rounded-circle {{ y }}{{ x }}"></div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
 {% endblock body %}

@@ -1,6 +1,10 @@
 @font-face {
-    font-family: South Park;
+    font-family: "South Park";
     src: url('south park.ttf');
+}
+@font-face {
+    font-family: "Cibola";
+    src: url("cibola.ttf");
 }
 
 /* -------- HOMEPAGE -------- */
@@ -10,7 +14,7 @@
     background-position: center;
     background-size: cover;
     overflow: hidden;
-    font-family: South Park, sans-serif;
+    font-family: "South Park", sans-serif;
     color: brown;
     text-align: center;
 }
@@ -27,6 +31,63 @@
     color : black;
 }
 
+/*********CHARACTER-CHOISE*********/
+.character {
+    padding: 0;
+    height: 85%;
+    width: inherit;
+}
+
+.box-character {
+    width: 300px;
+    margin-left: 38%;
+}
+
+#character h1 {
+    font-family: "South Park", sans-serif;
+}
+
+#character {
+    background-image : url("images/background.png");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+#character label {
+    font-family: "Cibola", sans-serif;
+}
+
+.box-question {
+    color: #FFFFFF;
+    width: 40%;
+    margin-left: 32%;
+    text-align: center;
+    padding: 1%;
+    font-size: 2em;
+}
+
+.form-check {
+    margin-right: 33%;
+}
+
+#character .btn {
+    margin-left: 47%;
+}
+
+.check {
+    margin-left: -8%;
+}
+
+/**********MAP***********/
+
+.tile {
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    mix-blend-mode: multiply;
+    position: relative;
+}
 /********** GAUTHIER MAP ****************/
 
 
@@ -53,4 +114,8 @@
     font-family: South Park, sans-serif;
     color: brown;
     text-align: center;
+}
+
+.gif-modal{
+    width: 100%;
 }
