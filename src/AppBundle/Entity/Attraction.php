@@ -65,6 +65,13 @@ class Attraction
      */
     private $nationality;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="photo_url", type="string", nullable=true, length=255)
+     */
+    private $photo;
+
 
     /**
      * Get id
@@ -218,6 +225,22 @@ class Attraction
     public function getVice()
     {
         return $this->vice;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param string $photo
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
     }
 }
 
