@@ -3,19 +3,26 @@
 {% block body %}
     <div id="map">
         <div class="container-fluid">
-        {% for i in 0..19 %}
-            <div class="row no-gutters row-height">
+            <div class="row row-height">
+                <div class="col-6 offset-3">
+                    <h2 class="map-title pt-4">Welcome To Viceland</h2>
+                </div>
+            </div>
+        {% for j in 'b'..'g'%}
+            <div class="row row-height">
+                {% for i in 0..11 %}
+                            <div class="col-1 rounded-circle {{ j }}{{ i }}"
+                                    {% for attraction in attractions %}
+                                    {% if attraction.coordY == j and attraction.coordX == i %}
+                                 style="background-image: url('{{ attraction.photo }}');
+                                         background-position: center;
+                                         background-size: cover;"
+                                        id="tile"
+                                    {% endif %}
+                                    {% endfor %}>
+                            </div>
 
-                <div class="col-6 row">
-                    {% for i in 0..11 %}
-                    <div class="col-1 tile"></div>
-                    {% endfor %}
-                </div>
-                <div class="col-6 row">
-                    {% for i in 0..11 %}
-                        <div class="col-1 tile"></div>
-                    {% endfor %}
-                </div>
+                {% endfor %}
             </div>
         {% endfor %}
         </div>

@@ -72,6 +72,20 @@ class Attraction
      */
     private $photo;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="coord_y", type="string", nullable=true)
+     */
+    private $coordY;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="coord_x", type="integer", nullable=true)
+     */
+    private $coordX;
+
 
     /**
      * Get id
@@ -241,6 +255,38 @@ class Attraction
     public function setPhoto($photo)
     {
         $this->photo = $photo;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCoordY()
+    {
+        return $this->coordY;
+    }
+
+    /**
+     * @param string $coordY
+     */
+    public function setCoordY($coordY)
+    {
+        $this->coordY = $coordY;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCoordX()
+    {
+        return $this->coordX;
+    }
+
+    /**
+     * @param int $coordX
+     */
+    public function setCoordX($coordX)
+    {
+        $this->coordX = $coordX;
     }
 }
 

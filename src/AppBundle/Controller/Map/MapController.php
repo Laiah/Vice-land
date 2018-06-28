@@ -11,6 +11,7 @@ namespace AppBundle\Controller\Map;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\Attraction;
 
 
 class MapController extends Controller
@@ -20,7 +21,10 @@ class MapController extends Controller
      */
     public function indexAction()
     {
-        // replace this example code with whatever you need
-        return $this->render('map/index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $attractions = $em->getRepository(Attraction::class)->findAll();
+        return $this->render('map/index.html.twig', array(
+            'attractions' => $attractions,
+        ));
     }
 }

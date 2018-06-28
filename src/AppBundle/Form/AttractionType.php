@@ -39,7 +39,11 @@ class AttractionType extends AbstractType
                         ->orderBy('u.name', 'DESC');
                 },
                 'choice_label' => 'name'
-            ));
+            ))
+            ->add('coordX')
+            ->add('coordY')
+            ->add('photo')
+        ;
     }/**
      * {@inheritdoc}
      */
