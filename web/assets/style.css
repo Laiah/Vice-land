@@ -1,6 +1,10 @@
 @font-face {
-    font-family: South Park;
+    font-family: "South Park";
     src: url('south park.ttf');
+}
+@font-face {
+    font-family: "Cibola";
+    src: url("cibola.ttf");
 }
 
 /* -------- HOMEPAGE -------- */
@@ -10,7 +14,7 @@
     background-position: center;
     background-size: cover;
     overflow: hidden;
-    font-family: South Park, sans-serif;
+    font-family: "South Park", sans-serif;
     color: brown;
     text-align: center;
 }
@@ -28,37 +32,50 @@
 }
 
 /*********CHARACTER-CHOISE*********/
-.perso{
-
-    background-color: #222222;
-    color: white;
-
+.character {
+    padding: 0;
+    height: 85%;
+    width: inherit;
 }
 
-p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.vicelardName{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-img {
-    height: 700PX;
+.box-character {
     width: 300px;
-    padding-bottom: 150px;
+    margin-left: 38%;
 }
 
-.vicelardOne{
-    margin-top: 0px;
+#character h1 {
+    font-family: "South Park", sans-serif;
 }
 
-.carousel-item .vicelardBtn {
-    margin-left: 48vw;
+#character {
+    background-image : url("images/background.png");
+    background-position: center;
+    background-size: cover;
+}
+
+#character label {
+    font-family: "Cibola", sans-serif;
+}
+
+.box-question {
+    color: #FFFFFF;
+    width: 40%;
+    margin-left: 32%;
+    text-align: center;
+    padding: 1%;
+    font-size: 2em;
+}
+
+.form-check {
+    margin-right: 33%;
+}
+
+#character .btn {
+    margin-left: 47%;
+}
+
+.check {
+    margin-left: -8%;
 }
 
 /**********MAP***********/

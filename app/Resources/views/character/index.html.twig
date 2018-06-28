@@ -1,84 +1,48 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <section class="perso">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active vicelardOne">
-                    <h1 class="vicelardName">Léa</h1>
-                    <P>Profile-type: Petite vicelarde Française, bouffeuse de fromage, grèviste hors pair et partisanne du "JAMAIS CONTENT !"</P>
-                    <button class="btn vicelardBtn">
-                        <a href="{{ '/map' }}">
-                            Choisir
-                        </a>
-                    </button>
-                    <img class="d-block w-100" src="/assets/images/vicelard_lea.png" alt="First slide">
+
+
+
+    <div class="container" id="character">
+        <h1 class="pt-5 text-center">Choose your character</h1>
+        <div>
+            <form method="get" action="{{ path('map') }}" class="row">
+                <div class="col-3 offset-4 my-5 form-check">
+                    <label>Are you a gay homosexual ?</label><br/>
+                    <input type="radio" id="yes" name="gay" value="yes" class="form-check-input">
+                    <label for="yes" class="form-check-label">Yes</label><br/>
+                    <input type="radio" id="no" name="gay" value="no" class="form-check-input">
+                    <label for="no" class="form-check-label">No</label><br/>
                 </div>
-                <div class="carousel-item">
-                    <h1 class="vicelardName">Kevin.M</h1>
-                    <P>Profile: Grand vicelard Africain, bouffeur de manioque, sprinter professionnel !</P>
-                    <button class="btn vicelardBtn">
-                        <a href="{{ '/map' }}">
-                            Choisir
-                        </a>
-                    </button>
-                    <img class="d-block w-100" src="/assets/images/vicelard_kevin_m.png" alt="Second slide">
+
+
+
+                <div id="carouselExampleControls" class="carousel slide col-12" data-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for character in characters %}
+                        <div class="carousel-item {% if character.nationality == 'mexicain' %}active{% endif %}">
+                            <img class="d-block box-character" src="{{ character.photo }}" alt="First slide">
+                            <div class="box-question">
+                                <input type="radio" class="check" id="characterCheck" name="nationality" value="{{ character.nationality }}-{{ character.gender }}">
+                                <label for="characterCheck">{{ character.nationality }}</label>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
-                <div class="carousel-item">
-                    <h1 class="vicelardName">Antho (dit Toto)</h1>
-                    <P>Profile: Gros vicelard Texan, bouffeur de Texmex, danseur de country et tireur d'élite sur mexicain !</P>
-                    <button class="btn vicelardBtn">
-                        <a href="{{ '/map' }}">
-                            Choisir
-                        </a>
-                    </button>
-                    <img class="d-block w-100" src="/assets/images/vicelard_antho.png" alt="Third slide">
-                </div>
-                <div class="carousel-item">
-                    <h1 class="vicelardName">Kevin.L</h1>
-                    <P>Profile: Gros vicelard mexicain, bouffeur de tacos, danseur de salsa et grimpeur hors pair!</P>
-                    <button class="btn vicelardBtn">
-                        <a href="{{ '/map' }}">
-                            Choisir
-                        </a>
-                    </button>
-                    <img class="d-block w-100" src="/assets/images/vicelard_kevin_l.png" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <h1 class="vicelardName">Gauthier</h1>
-                    <P>Profile: Jeune vicelard Russe, buveur de vodka, danseur de chaise musiqcale à Marseille et grand amoureux de son président!</P>
-                    <button class="btn vicelardBtn">
-                        <a href="{{ '/map' }}">
-                            Enter
-                        </a>
-                    </button>
-                    <img class="d-block w-100" src="/assets/images/vicelard_gauthier.png" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <h1 class="vicelardName">Max</h1>
-                    <P>Profile: bouffeur de tacos, danseur de salsa et grimpeur hors pair!</P>
-                    <button class="btn vicelardBtn">
-                        <a href="{{ '/map' }}">
-                            Choisir
-                        </a>
-                    </button>
-                    <img class="d-block w-100" src="/assets/images/vicelard_max.png" alt="Third slide">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+
+                <input type="submit" value="Choisir" class="btn ">
+            </form>
+
         </div>
-    </section>
-    <section></section>
+    </div>
 {% endblock %}
 

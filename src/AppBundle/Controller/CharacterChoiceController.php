@@ -8,9 +8,11 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Personnage;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Form\PersonnageType;
 
 class CharacterChoiceController extends Controller
 {
@@ -19,6 +21,12 @@ class CharacterChoiceController extends Controller
      */
     public function indexAction(Request $request)
     {
-        return $this->render('character/index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $characters = $em->getRepository(Personnage::class)->findAll();
+        $form = $this->createForm(PersonnageType::class);
+        return $this->render('character/index.html.twig', array(
+            'form' => $form->createView(),
+            'characters' => $characters
+        ));
     }
 }

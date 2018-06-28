@@ -24,30 +24,9 @@ class Personnage
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
-     */
-    private $name;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
-
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="size", type="float")
-     */
-    private $size;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="age", type="integer")
-     */
-    private $age;
 
     /**
      * @var string
@@ -72,6 +51,17 @@ class Personnage
      */
     private $vice;
 
+    /**
+     * @var bool
+     * @ORM\Column(name="gay", type="boolean", nullable=true)
+     */
+    private $gay;
+
+    /**
+     * @var string
+     * @ORM\Column(name="gender", type="string", length=10)
+     */
+    private $gender;
 
     /**
      * Get id
@@ -83,29 +73,6 @@ class Personnage
         return $this->id;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Personnage
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
 
     /**
      * Set description
@@ -131,53 +98,6 @@ class Personnage
         return $this->description;
     }
 
-    /**
-     * Set size
-     *
-     * @param float $size
-     *
-     * @return Personnage
-     */
-    public function setSize($size)
-    {
-        $this->size = $size;
-
-        return $this;
-    }
-
-    /**
-     * Get size
-     *
-     * @return float
-     */
-    public function getSize()
-    {
-        return $this->size;
-    }
-
-    /**
-     * Set age
-     *
-     * @param integer $age
-     *
-     * @return Personnage
-     */
-    public function setAge($age)
-    {
-        $this->age = $age;
-
-        return $this;
-    }
-
-    /**
-     * Get age
-     *
-     * @return int
-     */
-    public function getAge()
-    {
-        return $this->age;
-    }
 
     /**
      * Set nationality
@@ -241,6 +161,38 @@ class Personnage
     public function setPhoto($photo)
     {
         $this->photo = $photo;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isGay()
+    {
+        return $this->gay;
+    }
+
+    /**
+     * @param bool $gay
+     */
+    public function setGay($gay)
+    {
+        $this->gay = $gay;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * @param string $gender
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
     }
 }
 
