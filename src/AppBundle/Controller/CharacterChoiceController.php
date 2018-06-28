@@ -17,7 +17,7 @@ use AppBundle\Form\PersonnageType;
 class CharacterChoiceController extends Controller
 {
     /**
-     * @Route("/characterChoise", name="characterchoisepage")
+     * @Route("/characterChoice", name="characterchoicepage")
      */
     public function indexAction(Request $request)
     {
