@@ -53,7 +53,7 @@ class Attraction
      * @var Vice
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Vice", inversedBy="attractions")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $vice;
 
@@ -61,7 +61,7 @@ class Attraction
      * @var Nationality
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Nationality", inversedBy="attractions")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $nationality;
 

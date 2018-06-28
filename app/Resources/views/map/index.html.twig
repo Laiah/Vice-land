@@ -1,24 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-    <div class="container-fluid map pt-0">
+    <div id="map">
+        <div class="container-fluid">
         {% for i in 0..19 %}
-        <div class="row hcad">
+            <div class="row hcad">
 
-            <div class="col-6 row">
-                {% for i in 0..11 %}
-                <div class="col-1 tile"></div>
-                {% endfor %}
-            </div>
-            <div class="col-6 row">
-                {% for i in 0..11 %}
+                <div class="col-6 row">
+                    {% for i in 0..11 %}
                     <div class="col-1 tile"></div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
+                <div class="col-6 row">
+                    {% for i in 0..11 %}
+                        <div class="col-1 tile"></div>
+                    {% endfor %}
+                </div>
             </div>
-        </div>
         {% endfor %}
-
+        </div>
     </div>
 
 
