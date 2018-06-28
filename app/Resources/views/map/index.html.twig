@@ -2,37 +2,19 @@
 
 {% block body %}
 
-    <div class="container-fluid map">
-        {% for i in 0..20 %}
+    <div class="container-fluid map pt-0">
+        {% for i in 0..19 %}
         <div class="row hcad">
 
             <div class="col-6 row">
-                <div class="col-1 tile">1</div>
-                <div class="col-1 tile">2</div>
-                <div class="col-1 tile">3</div>
-                <div class="col-1 tile">4</div>
-                <div class="col-1 tile">5</div>
-                <div class="col-1 tile">6</div>
-                <div class="col-1 tile">7</div>
-                <div class="col-1 tile">8</div>
-                <div class="col-1 tile">9</div>
-                <div class="col-1 tile">10</div>
-                <div class="col-1 tile">11</div>
-                <div class="col-1 tile">12</div>
+                {% for i in 0..11 %}
+                <div class="col-1 tile"></div>
+                {% endfor %}
             </div>
             <div class="col-6 row">
-                <div class="col-1 tile">1</div>
-                <div class="col-1 tile">2</div>
-                <div class="col-1 tile">3</div>
-                <div class="col-1 tile">4</div>
-                <div class="col-1 tile">5</div>
-                <div class="col-1 tile">6</div>
-                <div class="col-1 tile">7</div>
-                <div class="col-1 tile">8</div>
-                <div class="col-1 tile">9</div>
-                <div class="col-1 tile">10</div>
-                <div class="col-1 tile">11</div>
-                <div class="col-1 tile">12</div>
+                {% for i in 0..11 %}
+                    <div class="col-1 tile"></div>
+                {% endfor %}
             </div>
         </div>
         {% endfor %}

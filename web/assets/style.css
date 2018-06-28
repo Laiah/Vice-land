@@ -27,6 +27,8 @@
     color : black;
 }
 
+/********** GAUTHIER MAP ****************/
+
 .tile {
     background-repeat: no-repeat;
     background-size: cover;
@@ -40,8 +42,7 @@
 }
 
 .map{
-    border: 1px red solid;
-    background-image: url("images/map.jpg");
+    background-image: url("images/map2.png");
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
     padding: 1em;
