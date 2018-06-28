@@ -4,26 +4,17 @@
 
 
     <div class="container" id="character">
-        <h1 class="pt-5 text-center">Choose your character</h1>
+        <h1 class="pt-5 text-center mb-5">Choose your character</h1>
         <div>
             <form method="get" action="{{ path('map') }}" class="row">
-                <div class="col-3 offset-4 my-5 form-check">
-                    <label>Are you a gay homosexual ?</label><br/>
-                    <input type="radio" id="yes" name="gay" value="yes" class="form-check-input">
-                    <label for="yes" class="form-check-label">Yes</label><br/>
-                    <input type="radio" id="no" name="gay" value="no" class="form-check-input">
-                    <label for="no" class="form-check-label">No</label><br/>
-                </div>
 
-
-
-                <div id="carouselExampleControls" class="carousel slide col-12" data-ride="carousel">
+                <div id="carouselExampleControls" class="carousel slide col-12 mt-5" data-ride="carousel">
                     <div class="carousel-inner">
                         {% for character in characters %}
                         <div class="carousel-item {% if character.nationality == 'mexicain' %}active{% endif %}">
                             <img class="d-block box-character" src="{{ character.photo }}" alt="First slide">
                             <div class="box-question">
-                                <input type="radio" class="check" id="characterCheck" name="nationality" value="{{ character.nationality }}-{{ character.gender }}">
+                                <input type="radio" class="check" id="characterCheck" name="nationality" value="{{ character.nationality }}">
                                 <label for="characterCheck">{{ character.nationality }}</label>
                             </div>
                         </div>

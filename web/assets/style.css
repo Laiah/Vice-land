@@ -119,3 +119,12 @@
 .gif-modal{
     width: 100%;
 }
+
+.outlined {
+    box-shadow: 3px 3px 20px green;
+}
+
+.greylined {
+    opacity: 0.4;
+    box-shadow: 3px 3px 20px red;
+}

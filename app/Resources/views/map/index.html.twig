@@ -15,7 +15,7 @@
                     <div class="row row-height">
                         {% for x in 0..11 %}
                             {% if map[y][x] is defined %}
-                                <div class="col-1 rounded-circle map{{ y }}{{ x }}"
+                                <div class="col-1 rounded-circle map{{ y }}{{ x }} {% if map[y][x].nationality == app.request.query.get("nationality") %}outlined{% else %}greylined{% endif %}"
                                      style="background-image: url('{{ map[y][x].photo }}');
                                         background-position: center;
                                         background-size: cover;"
